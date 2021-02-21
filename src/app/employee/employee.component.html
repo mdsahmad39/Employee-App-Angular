@@ -1,0 +1,41 @@
+<h1 id="title"><u>All Employees</u></h1>
+
+<div class="emp-table">
+ <table class="table">
+  <thead class="thead-dark">
+   <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Gender</th>
+    <th scope="col">DOJ</th>
+    <th scope="col">Salary</th>
+    <th scope="col">Login ID</th>
+    <th scope="col">Password</th>
+    <th scope="col">Experience</th>
+   </tr>
+
+   <tr *ngFor="let employee of employees">
+    <th scope="row">{{employee.id}}</th>
+    <td>{{employee.name | uppercase | gender: employee.gender}}</td>
+    <td>{{employee.gender | uppercase}}</td>
+    <td>{{employee.doj | date:'MMM dd, yyyy'}}</td>
+    <td>{{employee.salary | currency:'USD'}}</td>
+    <td>{{employee.loginId}}</td>
+    <td>{{employee.password}}</td>
+    <td>{{employee.doj | experience}}</td>
+   </tr>
+  </thead>
+ </table>
+ <br>
+ <br>
+
+ <label for="message">Message :</label>
+ <input type="text" [(ngModel)]="message" class="form-control">
+ <br>
+ <p>Your message is:</p>
+ <p>{{message}}</p>
+
+ <br><br>
+ <button class="btn btn-outline-primary" (click)="showMessage()">Click Here</button>
+
+</div>

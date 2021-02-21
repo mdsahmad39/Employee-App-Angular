@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	background: #D1913C;
+	background: -webkit-linear-gradient(to right, #FFD194, #D1913C);
+	background: linear-gradient(to right, #FFD194, #D1913C);
+}

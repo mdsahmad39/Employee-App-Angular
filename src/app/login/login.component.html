@@ -1,0 +1,19 @@
+<div class="login-block">
+ <form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm)">
+  <label for="loginid" class="text-uppercase">Login ID:</label>
+  <input type="text" name="loginId" placeholder="loginid..." class="form-control" ngModel>
+  <br>
+  <label for="password" class="text-uppercase">Password:</label>
+  <input type="password" name="password" placeholder="password..." class="form-control" ngModel>
+  <br>
+  <button class="btn btn-outline-success">Login</button>
+ </form>
+</div>
+
+<!-- <label for="loginid" class="text-uppercase">Login ID:</label>
+<input type="text" name="loginid" placeholder="loginid..." class="form-control" [(ngModel)]="user.loginId">
+<br>
+<label for="password" class="text-uppercase">Password:</label>
+<input type="password" name="password" placeholder="password..." class="form-control" [(ngModel)]="user.password">
+<br>
+<input class="btn btn-primary" type="submit" value="Login" (click)="loginSubmit()"> -->
