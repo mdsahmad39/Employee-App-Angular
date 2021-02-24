@@ -9,6 +9,24 @@ import { FormsModule } from '@angular/forms';
 import { ExperiencePipe } from './experience.pipe';
 import { GenderPipe } from './gender.pipe';
 import { LoginComponent } from './login/login.component';
+import { ProductComponent } from './product/product.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { RegisterComponent } from './register/register.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
+import { HttpClientModule } from '@angular/common/http';
+import { EmpbyidComponent } from './empbyid/empbyid.component';
+
+const appRoot: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registration', component: RegisterComponent },
+  { path: 'employee', canActivate: [AuthGuard], component: EmployeeComponent },
+  { path: 'empbyid', canActivate: [AuthGuard], component: EmpbyidComponent },
+  { path: 'products', canActivate: [AuthGuard], component: ProductComponent }
+
+];
 
 @NgModule({
   declarations: [
@@ -17,12 +35,19 @@ import { LoginComponent } from './login/login.component';
     EmployeeComponent,
     ExperiencePipe,
     GenderPipe,
-    LoginComponent
+    LoginComponent,
+    ProductComponent,
+    HeaderComponent,
+    FooterComponent,
+    RegisterComponent,
+    EmpbyidComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoot),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

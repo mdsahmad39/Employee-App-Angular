@@ -9,10 +9,11 @@ p{
  font-size: 20px;
 }
 
+
 .emp-table {
- width: 60%;
- margin:10% 20%;
- background-color: azure;
+ width: 70%;
+ margin:10% 15%;
+ background-color: white;
  border-radius: 6px;
  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
  padding: 20px 10px;

@@ -3,7 +3,7 @@ body {
 	margin:0;
 	padding:0;
 	box-sizing:border-box;
-	background: #D1913C;
-	background: -webkit-linear-gradient(to right, #FFD194, #D1913C);
-	background: linear-gradient(to right, #FFD194, #D1913C);
+	/* background: white;
+	background: -webkit-linear-gradient(to right, white,azure);
+	background: linear-gradient(to right, white,azure); */
 }

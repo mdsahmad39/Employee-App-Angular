@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EmpService } from '../emp.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   user: any;
 
-  constructor() {
+  constructor(public router: Router, public empService: EmpService) {
     this.user = { loginId: '', password: '' };
   }
 
@@ -21,7 +23,13 @@ export class LoginComponent implements OnInit {
   }
 
   submitLoginForm(loginForm: any): void {
-    console.log(loginForm.value);
+
+    if (loginForm.loginId === 'admin' && loginForm.password === 'admin') {
+      this.empService.setUserLoggedIn();
+      this.router.navigate(['products']);
+    } else {
+      alert("wrong credentials");
+    }
   }
 
 }

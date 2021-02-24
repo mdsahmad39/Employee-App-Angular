@@ -1,9 +1,9 @@
 <h1 id="title"><u>All Employees</u></h1>
 
 <div class="emp-table">
- <table class="table">
+ <table class="table table-hover">
   <thead class="thead-dark">
-   <tr>
+   <tr class="bg-info text-white" align="center">
     <th scope="col">Id</th>
     <th scope="col">Name</th>
     <th scope="col">Gender</th>
@@ -12,19 +12,28 @@
     <th scope="col">Login ID</th>
     <th scope="col">Password</th>
     <th scope="col">Experience</th>
-   </tr>
-
-   <tr *ngFor="let employee of employees">
-    <th scope="row">{{employee.id}}</th>
-    <td>{{employee.name | uppercase | gender: employee.gender}}</td>
-    <td>{{employee.gender | uppercase}}</td>
-    <td>{{employee.doj | date:'MMM dd, yyyy'}}</td>
-    <td>{{employee.salary | currency:'USD'}}</td>
-    <td>{{employee.loginId}}</td>
-    <td>{{employee.password}}</td>
-    <td>{{employee.doj | experience}}</td>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
    </tr>
   </thead>
+  <tbody>
+   <tr *ngFor="let employee of employeesList" align="center">
+    <th scope="row">{{employee.employeeId}}</th>
+    <td>{{employee.employeeName | uppercase | gender: employee.employeeGender}}</td>
+    <td>{{employee.employeeGender | uppercase}}</td>
+    <td>{{employee.employeeDoj | date:'MMM dd, yyyy'}}</td>
+    <td>{{employee.employeeSalary | currency:'USD'}}</td>
+    <td>{{employee.loginId}}</td>
+    <td>{{employee.password}}</td>
+    <td>{{employee.employeeDoj | experience}}</td>
+    <td>
+     <a href=""><i class="fas fa-user-edit"></i></a>
+    </td>
+    <td>
+     <a href=""><i class="fas fa-trash-alt" style="color:red;"></i></a>
+    </td>
+   </tr>
+  </tbody>
  </table>
  <br>
  <br>

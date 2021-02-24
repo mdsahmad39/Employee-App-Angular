@@ -1,0 +1,21 @@
+<h1 align="center">Products Data</h1><br /><br />
+
+<div class="container row offset-1" style="margin-top: 4px">
+ <div class="col-md-3" *ngFor="let product of products" style="margin-top:15px;">
+  <div class="card" style="width: 18rem; padding:5px; height:24rem;">
+   <img class="card-img-top" [src]="product.imagePath" alt="Card Image" />
+   <div class="cart-body" style="margin-top:15px;">
+    <p><strong>{{product.productName}}</strong></p>
+    <p class="card-text">{{product.description}}</p>
+   </div>
+   <div class="row">
+    <div class="col">
+     <div>{{product.price | currency:'INR'}}</div>
+    </div>
+    <div class="col">
+     <div><button class="btn btn-primary" (click)="addToCart(product)">Add To Cart</button></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

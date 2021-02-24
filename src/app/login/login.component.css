@@ -1,11 +1,7 @@
 .login-block {
-	background-color:azure;
-	width:400px;
+	background-color:white;
+	margin-top: 80px;
 	padding:30px;
-	position:absolute;
-	top:50%;
-	left:50%;
-	transform:translate(-50%,-50%);
 	border-radius:8px;
 	box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
